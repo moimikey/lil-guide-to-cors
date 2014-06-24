@@ -11,6 +11,11 @@ obj = XMLHttpRequest || XDomainRequest || ActiveXObject
 xhr = new obj('MSXML2.XMLHTTP.6.0')
 ```
 
+Pre-Flight
+===
+
+TODO
+
 Credentialed Requests
 ===
 
@@ -20,7 +25,17 @@ A credentialed request is a request that additionally sends or sets credentials.
 * Client-side SSL (requests that are authenticated where the client accompanies the request with SSL certificate(s))
 * Cookies ('Set-Cookie' header)
 
-Credentialed requests will be rejected during pre-flight if `Access-Control-Allow-Origin` has a value of `*` (a wildcard value). The origin must be explicitly set with a hostname or comma delimited hostnames.
+Clients that are sending a credentialed request must explicitly set the `#.withCredentials` property on the request object (in the below case, `xhr`) to `true`.
+
+```
+obj = XMLHttpRequest || XDomainRequest || ActiveXObject
+xhr = new obj('MSXML2.XMLHTTP.6.0')
+xhr.withCredentials = true
+```
+
+Since credentialed requests from the client trigger a pre-flight, the remote host must respond to the `OPTIONS` request with additional response headers.
+
+Response to the `OPTIONS` request should include `Access-Control-Allow-Origin` with a value other than `*`, otherwise the pre-flight will be rejected. Values can include a single hostname, or a list of hostnames, delimited by a comma.
 
 
 FAQ
