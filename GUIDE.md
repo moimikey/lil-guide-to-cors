@@ -35,7 +35,7 @@ xhr.withCredentials = true
 
 Since credentialed requests from the client trigger a pre-flight, the remote host must respond to the `OPTIONS` request with additional response headers.
 
-Response to the `OPTIONS` request should include `Access-Control-Allow-Origin` with a value other than `*`, otherwise the pre-flight will be rejected. Values can include a single hostname, or a list of hostnames, delimited by a comma.
+Response to the `OPTIONS` request should include `Access-Control-Allow-Origin` with a value other than `*`, otherwise the pre-flight will be rejected. Values can include a single hostname, or a list of hostnames, delimited by a comma. Additionally, a `Access-Control-Allow-Credentials: true` header to ensure that the pre-flight succeeds as the server is saying that credentials being sent to it are a-ok.
 
 
 FAQ
