@@ -3,9 +3,9 @@ Simple XHR Request
 
 ```
 //
-// XMLHttpRequest(null)
-// XDomainRequest(null)
-// ActiiveXObject('MSXML2.XMLHTTP.x.0')     x = 3 || 6
+// XMLHttpRequest(null)                    all modern browsers and IE >= 10
+// XDomainRequest(null)                    IE 8-9
+// ActiveXObject('MSXML2.XMLHTTP.x.0')     IE < 7 (the value of x refers to either version 3 or 6
 //
 obj = XMLHttpRequest || XDomainRequest || ActiveXObject
 xhr = new obj('MSXML2.XMLHTTP.6.0')
