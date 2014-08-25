@@ -8,12 +8,14 @@
 * Code examples must include minimum browser requirements.
 
 ### TODO
-* CORS and open XHR connections
+* CORS and open XHR connections (Comet/open streams)
 * Flow of a pre-flighted request
+* Avoidance of pre-flighted requests
 * XHR ready states
 * #.open() async vs sync
-* #.onreadystatechange vs. #.onload vs. #.onprogress vs. #.
 * Access-Control-Expose-Headers vs. Access-Control-Allow-Headers
 * Access-Control-Max-Age
 * XMLHttpRequest vs. XMLHttpRequest2
-* XMLHttpRequest callbacks (ie. onloadstart, onabort, onloadend, onprogress, onerror, onload, ontimeout)
+* XMLHttpRequest callbacks (ie. onreadystatechange, onloadstart, onabort, onloadend, onprogress, onerror, onload, ontimeout)
+* XDR vs. XHR vs. XHR2
+* XHR wrappers & alternatives
